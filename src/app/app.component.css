@@ -1,3 +1,34 @@
+*{
+    margin-bottom:  1.5vh;
+
+}
 div{
     border :1px solid black;
+    margin: 0 auto;
+    width: 27vw;
+    height: 50vh;
+    
+}
+input[type="text"]{
+    height: 3.5vh;
+    width: 25vw;
+    border: 1px solid black;
+    border-radius: 2.5vh;
+    color: black;
+}
+h1{
+    font-size:3.5vh;
+    margin-bottom:  3.5vh;
+}
+p {
+    font-size: 2.5vh;
+}
+button{
+    height: 3.5vh;
+    width: 25vw;
+    border: 1px solid black;
+    border-radius: 2.5vh;
+    color: black;
+    font-size: 2.5vh;
+    font-style: bold;
 }

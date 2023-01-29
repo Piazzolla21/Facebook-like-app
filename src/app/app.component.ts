@@ -19,7 +19,7 @@ export class AppComponent {
   invio(autore: HTMLInputElement, desc: HTMLInputElement):void {
     let formdata = new FormData();
     formdata.set('File', this.file);
-    this.http.post('http://localhost:4200/upload/uploadfiles', formdata).subscribe((response)=>{})
+    this.http.post('http://localhost:3100/upload/uploadfiles', formdata).subscribe((response)=>{})
     console.log(`Adding article title: ${autore.value} and link: ${desc.value}`);
     this.post.push(new Post(autore.value, desc.value,));
     console.log(this.post);

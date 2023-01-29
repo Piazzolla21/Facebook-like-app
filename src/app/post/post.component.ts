@@ -8,10 +8,25 @@ import { Post } from '../post';
 })
 export class PostComponent implements OnInit   {
   @Input() post:Post;
-  constructor(){
+  public show:boolean = false;
+  constructor(
+    
+  ){
 
   }
   ngOnInit(): void {
     
+  }
+  mostra():void{
+    this.show = !this.show;
+
+  }
+  aggiungiCommento(scrittore: HTMLInputElement, commento: HTMLInputElement):void{
+    console.log(`Adding article title: ${scrittore.value} and link: ${commento.value}`);
+    this.post.commenti.push({'scrittore' : scrittore.value,'comment' : commento.value});
+    console.log(this.post.commenti);
+  }
+  like():void{
+    this.post.miPiace += 1
   }
 }
