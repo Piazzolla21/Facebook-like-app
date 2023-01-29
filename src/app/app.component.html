@@ -5,9 +5,11 @@
   <p>Descrizione</p>
   <input type="text" name="desc" #newdesc>
   <p>Img</p>
-  <input type="file" name="immagine">
+  <input type="file" name="immagine" accept ='image/*' (change)="getfile($event)">
   <br>
   <button (click)="invio(newautore, newdesc)">Invio</button>
 </div>
-<app-post></app-post>
+
+<app-post *ngFor="let pos of this.post" [post] = 'pos'></app-post>
+
 
