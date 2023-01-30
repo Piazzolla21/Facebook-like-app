@@ -1,4 +1,4 @@
-import { Component,OnInit,HostBinding,Input } from '@angular/core';
+import { Component,OnInit,HostBinding,Input,OnDestroy } from '@angular/core';
 import { Post } from '../post';
 
 @Component({
@@ -6,13 +6,15 @@ import { Post } from '../post';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit   {
+export class PostComponent implements OnInit, OnDestroy {
   @Input() post:Post;
   public show:boolean = false;
-  constructor(
+  constructor(){
     
-  ){
-
+  }
+  ngOnDestroy(): void {
+      
+      
   }
   ngOnInit(): void {
     
@@ -29,4 +31,5 @@ export class PostComponent implements OnInit   {
   like():void{
     this.post.miPiace += 1
   }
+  
 }

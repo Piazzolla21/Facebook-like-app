@@ -12,6 +12,7 @@ db = client['Facebock']
 collection = db['Facebock']
 
 
+
 def getData():
     lista = []
     for a in collection.find():
@@ -20,6 +21,9 @@ def getData():
         print(lista)
     return lista
 
+def cancelladb():
+    collection.delete_many({})
+
 def insertPost(post):
     collection.insert_one(post)
  
@@ -27,20 +31,33 @@ def insertPost(post):
 def index():
   return getData()
 
-"""@app.route('/add_comment',methods = ['POST'])
-def add_comment():
+@app.route('/add',methods = ['POST'])
+def add_post():
+  
   data = request.get_json()
+  #record = getData()
+  #cancelladb()
   try:
     post = {
-      "id": data["id"],
-      "comment": data["comment"]
+      "autore": data["autore"],
+      "descrizione": data["descrizione"],
+      "miPiace": data['miPiace'],
+      "commenti": data['commenti'],
+      'immagine' : data['immagine']
     }
-    add_comment_to_db(post)
-    return '{"info": "Comment add complete"}'
+    insertPost(post)
+    '''for x in record :
+      print(x)
+      insertPost(x)'''
+    return '{"info": "Post aggiunto"}'
+    
   except Exception as e:
     print(e)
-    return '{"Error": "Errore nell aggiunta del commento"}'"""
-    
+    return '{"info": "Post non aggiunto"}'
+
+
+
+cancelladb()
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(("8.8.8.8", 80))
 ip = s.getsockname()[0]
