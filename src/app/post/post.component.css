@@ -58,12 +58,13 @@ button:hover{
 }
 
 .bottoni{
-    display: block;
-    margin-left: -17vw;
+    display: flex;
+    margin-left: 2vw;
     
 }
 
 .contenitore{
+    margin-bottom: 12vh;
     border: 2px solid black;
     background-color: coral;
     border-radius: 5vh;
@@ -76,4 +77,9 @@ h2{
 }
 h3{
     margin-left: -23.5vw;
+}
+hr{
+   background-color : black;
+   height: 2px;
+   border: none;
 }

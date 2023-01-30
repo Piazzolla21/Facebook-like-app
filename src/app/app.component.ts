@@ -31,6 +31,8 @@ export class AppComponent implements OnDestroy {
     this.http.post<any>('http://192.168.1.21:8080/add',pos.toString()).subscribe((response)=>{
       console.log(response['info'])
     })
+    autore.value = '';
+    desc.value = "";
   }
 
   file : any;

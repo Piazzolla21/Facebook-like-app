@@ -27,6 +27,8 @@ export class PostComponent implements OnInit, OnDestroy {
     console.log(`Adding article title: ${scrittore.value} and link: ${commento.value}`);
     this.post.commenti.push({'scrittore' : scrittore.value,'comment' : commento.value});
     console.log(this.post.commenti);
+    scrittore.value = ""
+    commento.value = ""
   }
   like():void{
     this.post.miPiace += 1

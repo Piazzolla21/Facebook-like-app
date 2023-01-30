@@ -8,15 +8,14 @@
    
     <div class="bottoni">
         <img class= "imgCommento" (click)="mostra()" src="/././assets/img/message.png" style="height: 8.3vh; width: 5vw; ">
-    
-    
-        <img class= "imgCommento" (click)="like()" src="/././assets/img/like.png" style="height: 8.3vh; width: 5vw;"> 
-        
+        <img class= "imgCommento" (click)="like()" src="/././assets/img/like.png" style="height: 8.3vh; width: 5vw;">
+        <p style="font-size:6vh;margin-top:0.5vh;">{{post.miPiace}}</p>
     </div>
-    <h3>{{post.miPiace}}</h3>
+    
 
     <ng-container *ngIf="show">
-        <h3>Aggiungi Commento</h3>
+        <hr>
+        <h4 style="font-size:5vh;font-style: bold;">Aggiungi Commento</h4>
         <p>Autore del commento</p>
         <input type="text" name="scrittore" #newscrittore>
         <p>Commento</p>
