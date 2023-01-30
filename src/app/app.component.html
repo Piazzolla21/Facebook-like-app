@@ -1,10 +1,13 @@
 <div>
+
   <h1>Aggiungi Post</h1>
+  
+ 
   <p>Autore</p>
   <input type="text" name="autore" #newautore>
   <p>Descrizione</p>
   <input type="text" name="desc" #newdesc>
-  <p>Img</p>
+  <p>Immagine</p>
   <input type="file" name="immagine" accept ='image/*' (change)="getfile($event)">
   <br>
   <button (click)="invio(newautore, newdesc)">Invio</button>

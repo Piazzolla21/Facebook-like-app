@@ -3,10 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 :root{
-    --bg: #222;
+    --bg: rgba(255, 72, 0, 0.897);
     background: var(--bg);
 }
 

@@ -1,11 +1,19 @@
-<div>
-    <h3>{{post.miPiace}}</h3>
-    <h3>{{post.autore}}</h3>
+<div class="contenitore">
+    <h2 style="font-style: oblique;">{{post.autore}}</h2>
     <h3>{{post.descrizione}}</h3>
     
-    <button (click)="mostra()">Commenti</button>
-    <button (click)="like()">Like</button>
-    <img src='{{post.immagine}}' alt="">
+    
+    
+    <img src='{{post.immagine}}' alt="" style="height: 512px; width: 512px;">
+   
+    <div class="bottoni">
+        <img class= "imgCommento" (click)="mostra()" src="/././assets/img/message.png" style="height: 8.3vh; width: 5vw; ">
+    
+    
+        <img class= "imgCommento" (click)="like()" src="/././assets/img/like.png" style="height: 8.3vh; width: 5vw;"> 
+        
+    </div>
+    <h3>{{post.miPiace}}</h3>
 
     <ng-container *ngIf="show">
         <h3>Aggiungi Commento</h3>
@@ -13,7 +21,7 @@
         <input type="text" name="scrittore" #newscrittore>
         <p>Commento</p>
         <input type="text" name="desc" #newcommento>
-        <button (click)="aggiungiCommento(newscrittore,newcommento)">Aggiungi commento</button>
+        <button class="aggiungiCommento2" (click)="aggiungiCommento(newscrittore,newcommento)">Aggiungi commento</button>
         <app-commenti *ngFor="let com of this.post.commenti" [commenti] = 'com'></app-commenti>
     </ng-container>
 </div>
